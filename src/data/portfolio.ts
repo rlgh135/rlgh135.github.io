@@ -4,15 +4,15 @@ export const profile = {
   name: "Kiho Park",
   title: "Full Stack Developer",
   tagline: "I build things for the web.",
-  bio: "경계를 탐색하는 개발자입니다. 사용자 경험을 최우선으로 생각하며, 확장 가능하고 유지보수가 쉬운 코드를 작성합니다. 새로운 기술을 배우고 복잡한 문제를 해결하는 것을 좋아합니다.",
+  bio: "깔끔한 구조의 아키텍처를 중시하는 개발자입니다. 각 영역들을 독립적인 모듈로 구성하는 것을 최우선으로 생각하며, 확장 가능하고 유지보수가 쉬운 코드를 지향합니다. 독립적인 모듈로 이루어진 클린 아키텍처는 AI에게 업무를 지시할 때에도 효과적입니다.",
   location: "Seoul, South Korea",
-  email: "your@email.com",
+  email: "rlgh135@email.com",
 };
 
 export const socials: SocialLink[] = [
-  { label: "GitHub", href: "https://github.com/yourusername", icon: "gh" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: "li" },
-  { label: "Blog", href: "https://yourblog.dev", icon: "bl" },
+  { label: "GitHub", href: "https://github.com/rlgh135", icon: "gh" },
+  // { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: "li" },
+  { label: "Blog", href: "https://velog.io/@rlgh135/posts", icon: "bl" },
 ];
 
 // 사이드 프로젝트만 포함 (회사 프로젝트는 experiences 내 projects 필드에 작성)
@@ -51,67 +51,82 @@ export const projects: Project[] = [
 export const skills: Skill[] = [
   {
     category: "Frontend",
-    items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"],
+    items: ["React", "TypeScript", "Tailwind CSS", "Vite"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Python", "PostgreSQL", "Redis", "GraphQL"],
+    items: ["Python", "PostgreSQL", "Spring Boot", "Swift"],
   },
   {
     category: "DevOps",
-    items: ["Docker", "GitHub Actions", "AWS", "Nginx", "Linux"],
+    items: ["Docker", "Jenkins", "AWS", "Redis"],
   },
   {
     category: "Tools",
-    items: ["Git", "Figma", "Postman", "Vim", "Notion"],
+    items: ["Git", "Jira", "Postman", "Confluence"],
   },
 ];
 
 export const experiences: Experience[] = [
   {
-    company: "Tech Company A",
-    role: "Backend Engineer",
-    period: "2023 — Present",
+    company: "(주) 하이아스",
+    role: "FullStack Engineer",
+    period: "2025 — Present",
     description:
-      "사내 AI 기반 서비스 개발 및 백엔드 시스템 설계. DDD·Hexagonal 아키텍처 도입으로 레거시 모놀리스를 모듈형 구조로 전환 주도.",
+      "SI 개발자.",
     projects: [
       {
-        title: "사내 AI 리포트 자동화 플랫폼",
+        title: "다이닝브랜즈그룹 AI platform 구축",
         description:
-          "LLM을 활용해 수작업으로 작성하던 주간 분석 리포트를 자동 생성. 도메인 이벤트 기반으로 파이프라인 설계.",
-        tags: ["Python", "FastAPI", "LangChain", "PostgreSQL", "DDD"],
-        impact: "리포트 생성 시간 80% 단축 · 월 처리량 200 → 1,200건",
+          "전사 통합 AI 플랫폼(LLM Wrapper) 구축",
+        tags: ["Python", "FastAPI", "Tool Calling", "PostgreSQL"],
+        impact: "각 기능에 특화된 특화 agent의 추가 및 배정으로 권한에 따라 효율적으로 접근 범위를 제한시킴.",
       },
       {
-        title: "레거시 API 서버 마이그레이션",
+        title: "대상그룹 AI platform 유지보수 및 고도화",
         description:
-          "Java 6 기반 모놀리스를 Spring Boot 3로 단계적 마이그레이션. Strangler Fig 패턴 적용해 무중단 전환.",
-        tags: ["Java", "Spring Boot", "Hexagonal", "MySQL"],
-        impact: "응답 지연 P95 기준 1.2s → 280ms",
+          "AI 플랫폼 유지보수 및 고도화",
+        tags: ["Python", "FastAPI", "LangGraph", "PostgreSQL"],
+        impact: "기존 LangGraph로 진행되는 LLM 로직을 Tool Calling으로 바꾸어 속도 최대 5배 개선, 토큰 사용량 최대 5배 개선",
+      },
+      {
+        title: "privoro",
+        description:
+          "usb, mqtt 통신 기반 서버 사이의 허브 역할의 아이폰 앱 구축",
+        tags: ["Swift", "mqtt"],
+        impact: "쓰레드 분리를 통한 비동기 통신 구현. 0.1s interval 1024KB 4시간 송, 수신 무리 없도록 구축.",
+      },
+      {
+        title: "삼성전자 Customer Voyager",
+        description:
+          "대용량 데이터 정제 후 마트 구축 및 마트 데이터와 AI를 활용한 마케팅 추천 페이지 구축 및 고도화",
+        tags: ["React", "Spring Boot", "FASTAPI", "MySQL", "Bedrock"],
+        impact: "tableau 대신 오픈소스인 chart.js를 채택 후 커스텀 컴포넌트로 만들어 비용 절감, 비동기 쿼리 조회에 커스텀 Executor를 사용해 쿼리 조회 시간 최장 15분 -> 2분으로 단축.",
       },
     ],
   },
   {
-    company: "Startup B",
-    role: "Full Stack Developer",
-    period: "2022 — 2023",
+    company: "KH정보교육원",
+    role: "Mentor",
+    period: "2025.08 — 2026.04",
     description:
-      "0 → 1 제품 개발. Next.js와 Node.js로 MVP 구축, 6개월 만에 MAU 10,000명 달성.",
-    projects: [
-      {
-        title: "B2B SaaS MVP",
-        description:
-          "팀 내 유일한 개발자로 기획부터 배포까지 전담. 인증·결제·대시보드를 포함한 풀스택 제품 구축.",
-        tags: ["Next.js", "Node.js", "Prisma", "Stripe"],
-        impact: "MAU 0 → 10,000 · 6개월",
-      },
-    ],
+      "주 1회 멘토링 세션을 통한 재학생 교육 및 semi final, final 프로젝트 심사.",
+    projects:[]
   },
   {
-    company: "Agency C",
+    company: "(주) 엘앤소프트",
     role: "Web Developer",
-    period: "2021 — 2022",
+    period: "2025",
     description:
-      "다양한 클라이언트를 위한 웹 솔루션 개발. 반응형 웹사이트 20개 이상 납품.",
+      "SI 개발자.",
+    projects: [
+      {
+        title: "anyApply",
+        description:
+          "구인 구직 플랫폼 anyApply beta QA 대응 처리 및 구축",
+        tags: ["React", "Spring Boot"],
+        impact: "",
+      },
+    ],
   },
 ];

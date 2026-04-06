@@ -31,10 +31,10 @@ export function Hero() {
               e.preventDefault();
               document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
             }}>
-            프로젝트 보기
+            Side Project
           </a>
           <a href={`mailto:${profile.email}`} className="btn btn-ghost">
-            연락하기
+            Contact
           </a>
         </div>
 
