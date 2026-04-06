@@ -26,6 +26,23 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/ai-stock-analyzer",
     live: "https://ai-stock-analyzer.vercel.app",
     year: "2024",
+    detail: {
+      overview:
+        "국내 주식 시장에 특화된 AI 분석 서비스입니다. 거시경제 지표, 뉴스 감성 분석, 기술적 지표를 LLM과 결합해 개인 투자자에게 인사이트를 제공합니다. DDD 기반으로 도메인 레이어를 분리해 분석 로직의 독립성을 확보했습니다.",
+      images: [],
+      troubleshooting: [
+        {
+          problem: "LLM 응답 지연으로 사용자 경험 저하 (평균 8초)",
+          solution:
+            "분석 파이프라인을 병렬 체인으로 재설계하고 중간 결과를 스트리밍으로 전달해 체감 응답 시간을 1.5초로 단축.",
+        },
+        {
+          problem: "거시경제 데이터 소스마다 포맷이 달라 전처리 복잡도 증가",
+          solution:
+            "각 데이터 소스를 독립 Adapter로 추상화해 도메인 모델과 분리. 새 소스 추가 시 Adapter만 구현하면 되는 구조로 개선.",
+        },
+      ],
+    },
   },
   {
     id: 2,
@@ -36,9 +53,52 @@ export const projects: Project[] = [
     github: "https://github.com/yourusername/query-optimizer",
     live: "https://query-optimizer.vercel.app",
     year: "2024",
+    detail: {
+      overview:
+        "SQL 실행 계획(EXPLAIN ANALYZE)을 파싱해 병목 노드를 시각적으로 표현하는 웹 앱입니다. AST 기반으로 쿼리를 분석하고 인덱스 누락, Seq Scan, N+1 패턴을 자동으로 감지해 개선안을 제안합니다.",
+      images: [],
+      troubleshooting: [
+        {
+          problem: "중첩 서브쿼리가 포함된 복잡한 SQL의 AST 파싱 실패",
+          solution:
+            "오픈소스 파서(node-sql-parser)의 엣지 케이스를 분석해 전처리 레이어를 추가. 파싱 전 쿼리를 정규화하는 단계를 삽입해 해결.",
+        },
+        {
+          problem: "실행 계획 트리 노드 수가 많을 때 렌더링 성능 저하",
+          solution:
+            "D3.js 렌더링을 가상화해 뷰포트 내 노드만 그리도록 최적화. 1,000개 이상 노드에서도 60fps 유지.",
+        },
+      ],
+    },
   },
   {
     id: 3,
+    title: "Local AI Assistant",
+    description:
+      "로컬 파일시스템과 직접 상호작용하는 데스크탑 AI 에이전트. Agentic 아키텍처 기반으로 파일 탐색·편집·실행을 자연어로 처리합니다.",
+    tags: ["Python", "LangGraph", "Electron", "Hexagonal"],
+    github: "https://github.com/yourusername/local-ai-assistant",
+    year: "2024",
+    detail: {
+      overview:
+        "자연어 명령으로 로컬 파일시스템을 탐색·편집·실행할 수 있는 데스크탑 AI 에이전트입니다. LangGraph 기반의 Agentic 아키텍처로 복잡한 멀티스텝 작업을 처리하며, Hexagonal 아키텍처로 LLM 교체 비용을 최소화했습니다.",
+      images: [],
+      troubleshooting: [
+        {
+          problem: "에이전트가 파일 삭제·수정 등 위험 작업을 확인 없이 실행",
+          solution:
+            "도구를 read-only / write / destructive 3단계로 분류하고, destructive 작업은 사용자 확인 단계를 강제하는 Guard 레이어를 추가.",
+        },
+        {
+          problem: "LangGraph 상태 그래프가 복잡해질수록 디버깅 어려움",
+          solution:
+            "각 노드 진입·퇴장 시 상태 스냅샷을 로컬 SQLite에 저장하는 옵저버를 붙여 실행 흐름을 시각적으로 추적할 수 있게 개선.",
+        },
+      ],
+    },
+  },
+  {
+    id: 4,
     title: "Local AI Assistant",
     description:
       "로컬 파일시스템과 직접 상호작용하는 데스크탑 AI 에이전트. Agentic 아키텍처 기반으로 파일 탐색·편집·실행을 자연어로 처리합니다.",

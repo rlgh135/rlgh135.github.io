@@ -1,3 +1,14 @@
+export interface TroubleShooting {
+  problem: string;
+  solution: string;
+}
+
+export interface ProjectDetail {
+  overview: string;
+  images?: string[];
+  troubleshooting?: TroubleShooting[];
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -6,6 +17,7 @@ export interface Project {
   github?: string;
   live?: string;
   year: string;
+  detail?: ProjectDetail;
 }
 
 export interface Skill {
