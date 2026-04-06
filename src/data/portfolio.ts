@@ -1,4 +1,4 @@
-import type { Project, Skill, Experience, SocialLink, WorkProject } from "../types";
+import type { Project, Skill, Experience, SocialLink } from "../types";
 
 export const profile = {
   name: "Kiho Park",
