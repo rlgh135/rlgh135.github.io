@@ -1,6 +1,6 @@
 import { useScrollSpy } from "../hooks/useScrollSpy";
 
-const sections = ["about", "experience", "projects", "contact"];
+const sections = ["about", "experience", "contact"];
 
 export function Nav() {
   const active = useScrollSpy(sections);
@@ -13,11 +13,9 @@ export function Nav() {
           <small>FULL-STACK ENGINEER</small>
         </a>
         <div className="nav-links">
-          {sections.slice(1, 3).map((id) => (
-            <a key={id} href={`#${id}`} className={active === id ? "active" : ""}>
-              {id === "experience" ? "Experience" : "Work"}
-            </a>
-          ))}
+          <a href="#experience" className={active === "experience" ? "active" : ""}>
+            Experience
+          </a>
           <a className="nav-contact" href="#contact">Let's talk</a>
         </div>
       </nav>

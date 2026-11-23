@@ -1,4 +1,4 @@
-import type { Experience, Project, Skill, SocialLink } from "../types";
+import type { Experience, Skill, SocialLink } from "../types";
 
 export const profile = {
   name: "Kiho Park",
@@ -19,33 +19,6 @@ export const highlights = [
   { value: "5×", label: "LLM 처리 속도 개선" },
   { value: "80%", label: "쿼리 대기 시간 단축" },
   { value: "4h", label: "고용량 통신 안정성 검증" },
-];
-
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "saga-agent",
-    description: "AI 에이전트의 도구 실행 중 실패가 발생하면 완료된 작업을 역순으로 보상하는 트랜잭션 안전 레이어입니다.",
-    tags: ["Python", "Saga Pattern", "Async", "AI Agent"],
-    github: "https://github.com/rlgh135/saga-agent",
-    year: "2026",
-  },
-  {
-    id: 2,
-    title: "my-ai-agent",
-    description: "파일 작업, 웹 검색, 이메일 발송을 수행하는 MCP 기반 로컬 AI 어시스턴트입니다. 위험 작업에는 사용자 승인 흐름을 적용했습니다.",
-    tags: ["FastAPI", "React", "MCP", "PostgreSQL"],
-    github: "https://github.com/rlgh135/my-ai-agent",
-    year: "2026",
-  },
-  {
-    id: 3,
-    title: "sideboard",
-    description: "업무 흐름을 시각적으로 관리하는 칸반 보드 프로젝트입니다. React 클라이언트와 Java 서버를 분리해 구축했습니다.",
-    tags: ["TypeScript", "React", "Java", "REST API"],
-    github: "https://github.com/rlgh135/sideboard_client",
-    year: "2025",
-  },
 ];
 
 export const skills: Skill[] = [
