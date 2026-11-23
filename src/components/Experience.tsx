@@ -3,30 +3,58 @@ import { experiences } from "../data/portfolio";
 export function Experience() {
   return (
     <section id="experience" className="section experience-section">
-      <div className="section-intro">
-        <p className="eyebrow">EXPERIENCE</p>
-        <h2>제품의 전체 흐름을<br />직접 연결합니다.</h2>
-        <p>아이디어를 인터페이스로, 복잡한 로직을 안정적인 시스템으로 전환해 온 경험입니다.</p>
-      </div>
+      <header className="resume-heading">
+        <p className="eyebrow">WORK EXPERIENCE</p>
+        <h2>경력기술서</h2>
+        <p>프로젝트의 구조를 이해하고 데이터가 생성·가공·전달되는 지점을 따라가며 문제를 해결해 왔습니다.</p>
+      </header>
 
       <div className="experience-list">
-        {experiences.map((exp) => (
-          <article className="experience-item" key={`${exp.company}-${exp.period}`}>
-            <div className="experience-meta">
-              <time>{exp.period}</time>
-              <span>{exp.company}</span>
-            </div>
+        {experiences.map((experience) => (
+          <article className="experience-item" key={`${experience.company}-${experience.period}`}>
+            <aside className="experience-meta">
+              <span className="experience-label">{experience.label ?? "Work"}</span>
+              <time>{experience.period}</time>
+              <strong>{experience.company}</strong>
+            </aside>
+
             <div className="experience-content">
-              <h3>{exp.role}</h3>
-              <p className="experience-description">{exp.description}</p>
-              {!!exp.projects?.length && (
+              <h3>{experience.role}</h3>
+              <p className="experience-description">{experience.description}</p>
+
+              {!!experience.details?.length && (
+                <ul className="experience-details">
+                  {experience.details.map((detail) => <li key={detail}>{detail}</li>)}
+                </ul>
+              )}
+
+              {experience.note && <p className="experience-note">{experience.note}</p>}
+
+              {!!experience.projects?.length && (
                 <div className="case-list">
-                  {exp.projects.map((project) => (
-                    <div className="case" key={project.title}>
-                      <div><h4>{project.title}</h4><p>{project.description}</p></div>
-                      {project.impact && <strong>{project.impact}</strong>}
+                  {experience.projects.map((project) => (
+                    <section className="case" key={project.title}>
+                      <header className="case-header">
+                        <div>
+                          <h4>{project.title}</h4>
+                          <time>{project.period}</time>
+                        </div>
+                        <p>{project.description}</p>
+                      </header>
+
+                      <div className="case-details">
+                        <div>
+                          <h5>담당 역할</h5>
+                          <ul>{project.responsibilities.map((item) => <li key={item}>{item}</li>)}</ul>
+                        </div>
+                        <div className="case-outcomes">
+                          <h5>성과</h5>
+                          <ul>{project.outcomes.map((item) => <li key={item}>{item}</li>)}</ul>
+                        </div>
+                      </div>
+
                       <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                    </div>
+                    </section>
                   ))}
                 </div>
               )}

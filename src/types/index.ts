@@ -5,9 +5,11 @@ export interface Skill {
 
 export interface WorkProject {
   title: string;
+  period: string;
   description: string;
   tags: string[];
-  impact?: string;
+  responsibilities: string[];
+  outcomes: string[];
 }
 
 export interface Experience {
@@ -15,6 +17,9 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
+  details?: string[];
+  note?: string;
+  label?: string;
   projects?: WorkProject[];
 }
 
