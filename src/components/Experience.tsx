@@ -2,49 +2,36 @@ import { experiences } from "../data/portfolio";
 
 export function Experience() {
   return (
-    <section id="experience" className="section">
-      <div className="section-header">
-        <span className="section-num">02</span>
-        <h2 className="section-title">Experience</h2>
+    <section id="experience" className="section experience-section">
+      <div className="section-intro">
+        <p className="eyebrow">EXPERIENCE</p>
+        <h2>제품의 전체 흐름을<br />직접 연결합니다.</h2>
+        <p>아이디어를 인터페이스로, 복잡한 로직을 안정적인 시스템으로 전환해 온 경험입니다.</p>
       </div>
 
-      <div className="timeline">
-        {experiences.map((exp, i) => (
-          <div key={i} className="timeline-item">
-            <div className="timeline-marker">
-              <div className="marker-dot" />
-              {i < experiences.length - 1 && <div className="marker-line" />}
+      <div className="experience-list">
+        {experiences.map((exp) => (
+          <article className="experience-item" key={`${exp.company}-${exp.period}`}>
+            <div className="experience-meta">
+              <time>{exp.period}</time>
+              <span>{exp.company}</span>
             </div>
-            <div className="timeline-content">
-              <div className="exp-header">
-                <h3 className="exp-role">{exp.role}</h3>
-                <span className="exp-period">{exp.period}</span>
-              </div>
-              <p className="exp-company">{exp.company}</p>
-              <p className="exp-desc">{exp.description}</p>
-
-              {exp.projects && exp.projects.length > 0 && (
-                <div className="work-projects">
-                  {exp.projects.map((proj, j) => (
-                    <div key={j} className="work-project-card">
-                      <h4 className="work-project-title">{proj.title}</h4>
-                      <p className="work-project-desc">{proj.description}</p>
-                      {proj.impact && (
-                        <p className="work-project-impact">{proj.impact}</p>
-                      )}
-                      <div className="project-tags">
-                        {proj.tags.map((tag) => (
-                          <span key={tag} className="tag">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+            <div className="experience-content">
+              <h3>{exp.role}</h3>
+              <p className="experience-description">{exp.description}</p>
+              {!!exp.projects?.length && (
+                <div className="case-list">
+                  {exp.projects.map((project) => (
+                    <div className="case" key={project.title}>
+                      <div><h4>{project.title}</h4><p>{project.description}</p></div>
+                      {project.impact && <strong>{project.impact}</strong>}
+                      <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                     </div>
                   ))}
                 </div>
               )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

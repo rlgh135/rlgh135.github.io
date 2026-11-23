@@ -1,63 +1,42 @@
-import { profile, socials } from "../data/portfolio";
+import { highlights, profile, socials } from "../data/portfolio";
 
 export function Hero() {
   return (
     <section id="about" className="hero">
-      <div className="hero-grid">
-        <div className="hero-eyebrow">
-          <span className="badge">Available for work</span>
-          <span className="location">📍 {profile.location}</span>
+      <div className="hero-kicker"><span /> SEOUL · AVAILABLE FOR COLLABORATION</div>
+      <div className="hero-layout">
+        <div className="hero-copy">
+          <p className="hero-role">{profile.title}</p>
+          <h1>{profile.statement.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
+          <p className="hero-bio">{profile.bio}</p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#experience">경험 살펴보기</a>
+            <a className="text-link" href={socials[0].href} target="_blank" rel="noreferrer">GitHub 방문</a>
+          </div>
         </div>
 
-        <h1 className="hero-name">
-          {profile.name.split("").map((char, i) => (
-            <span key={i} className="char" style={{ animationDelay: `${i * 0.04}s` }}>
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
-        </h1>
-
-        <div className="hero-title-row">
-          <div className="title-line" />
-          <p className="hero-title">{profile.title}</p>
-        </div>
-
-        <p className="hero-tagline">{profile.tagline}</p>
-        <p className="hero-bio">{profile.bio}</p>
-
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-            }}>
-            Side Project
-          </a>
-          <a href={`mailto:${profile.email}`} className="btn btn-ghost">
-            Contact
-          </a>
-        </div>
-
-        <div className="hero-socials">
-          {socials.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="social-link">
-              {s.label} ↗
-            </a>
-          ))}
+        <div className="system-card" aria-label="개발 원칙">
+          <div className="system-card-top"><span>system.architecture</span><span className="live-dot">LIVE</span></div>
+          <div className="system-orbit">
+            <div className="orbit orbit-a" />
+            <div className="orbit orbit-b" />
+            <div className="system-core"><strong>BUILD</strong><span>clean boundaries</span></div>
+            <span className="node node-a">AI</span>
+            <span className="node node-b">WEB</span>
+            <span className="node node-c">DATA</span>
+          </div>
+          <div className="system-log">
+            <span><i>01</i> Modular by design</span>
+            <span><i>02</i> Measured in production</span>
+            <span><i>03</i> Built for change</span>
+          </div>
         </div>
       </div>
 
-      <div className="hero-deco">
-        <div className="deco-ring deco-ring-1" />
-        <div className="deco-ring deco-ring-2" />
-        <div className="deco-ring deco-ring-3" />
-        <div className="deco-code">
-          <span className="code-line">const dev = {"{"}</span>
-          <span className="code-line">&nbsp;&nbsp;passion: true,</span>
-          <span className="code-line">&nbsp;&nbsp;coffee: Infinity,</span>
-          <span className="code-line">&nbsp;&nbsp;bugs: 0, // 🤞</span>
-          <span className="code-line">{"}"}</span>
-        </div>
+      <div className="hero-metrics">
+        {highlights.map((item) => (
+          <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>
+        ))}
       </div>
     </section>
   );

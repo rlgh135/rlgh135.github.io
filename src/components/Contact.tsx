@@ -2,31 +2,15 @@ import { profile, socials } from "../data/portfolio";
 
 export function Contact() {
   return (
-    <section id="contact" className="section section-contact">
+    <section id="contact" className="contact-section">
       <div className="contact-inner">
-        <span className="section-num">04</span>
-        <h2 className="contact-heading">함께 만들어볼까요?</h2>
-        <p className="contact-sub">
-          새로운 기회, 협업 제안, 혹은 그냥 안녕이라도 — 언제든 환영합니다.
-        </p>
-
-        <a href={`mailto:${profile.email}`} className="contact-email">
-          {profile.email}
-        </a>
-
-        <div className="contact-socials">
-          {socials.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="contact-social-link">
-              {s.label}
-            </a>
-          ))}
-        </div>
+        <p className="eyebrow">CONTACT</p>
+        <h2>좋은 문제를 함께<br />풀어보고 싶습니다.</h2>
+        <p>AI 제품, 풀스택 개발, 기술 협업에 관한 이야기를 기다립니다.</p>
+        <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <div className="contact-links">{socials.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer">{social.label}</a>)}</div>
       </div>
-
-      <footer className="footer">
-        <span>Built with React + TypeScript</span>
-        <span>Deployed via GitHub Actions</span>
-      </footer>
+      <footer><span>© {new Date().getFullYear()} Kiho Park</span><span>Built with React & TypeScript</span></footer>
     </section>
   );
 }

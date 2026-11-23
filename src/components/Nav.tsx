@@ -1,39 +1,26 @@
 import { useScrollSpy } from "../hooks/useScrollSpy";
 
-const SECTIONS = ["about", "experience", "skills", "projects", "contact"];
-const LABELS: Record<string, string> = {
-  about: "About",
-  experience: "Experience",
-  skills: "Skills",
-  projects: "Side Projects",
-  contact: "Contact",
-};
+const sections = ["about", "experience", "projects", "contact"];
 
 export function Nav() {
-  const active = useScrollSpy(SECTIONS);
+  const active = useScrollSpy(sections);
 
   return (
-    <nav className="nav">
-      <div className="nav-brand">
-        <span className="nav-dot" />
-        <span>Portfolio</span>
-      </div>
-      <ul className="nav-links">
-        {SECTIONS.map((id) => (
-          <li key={id}>
-            <a
-              href={`#${id}`}
-              className={active === id ? "nav-link active" : "nav-link"}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              {LABELS[id]}
+    <header className="nav-shell">
+      <nav className="nav" aria-label="주요 메뉴">
+        <a className="nav-brand" href="#about" aria-label="Kiho Park 홈">
+          <span>KP</span>
+          <small>FULL-STACK ENGINEER</small>
+        </a>
+        <div className="nav-links">
+          {sections.slice(1, 3).map((id) => (
+            <a key={id} href={`#${id}`} className={active === id ? "active" : ""}>
+              {id === "experience" ? "Experience" : "Work"}
             </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+          ))}
+          <a className="nav-contact" href="#contact">Let's talk</a>
+        </div>
+      </nav>
+    </header>
   );
 }
