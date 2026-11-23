@@ -20,7 +20,6 @@ export function Experience() {
 
             <div className="experience-content">
               <h3>{experience.role}</h3>
-              <p className="experience-description">{experience.description}</p>
 
               {!!experience.details?.length && (
                 <ul className="experience-details">

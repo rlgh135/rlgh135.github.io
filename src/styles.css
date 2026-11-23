@@ -62,14 +62,13 @@ ul, dl, dd { margin: 0; padding: 0; }
 .experience-label { padding: 4px 7px; border: 1px solid var(--line); border-radius: 5px; color: var(--blue); font: .58rem var(--mono); text-transform: uppercase; letter-spacing: .06em; }
 .experience-meta time { margin-top: 5px; color: var(--muted); font: .7rem var(--mono); line-height: 1.6; }
 .experience-meta strong { font-size: .9rem; }
-.experience-content > h3 { margin: -7px 0 9px; font-size: 1.65rem; letter-spacing: -.04em; }
-.experience-description { max-width: 740px; margin: 0; color: var(--muted); }
-.experience-details { display: grid; gap: 5px; margin-top: 22px; list-style: none; }
+.experience-content > h3 { margin: -7px 0 0; font-size: 1.65rem; letter-spacing: -.04em; }
+.experience-details { display: grid; gap: 5px; margin-top: 14px; list-style: none; }
 .experience-details li { position: relative; padding-left: 16px; font-size: .86rem; }
 .experience-details li::before { content: ""; position: absolute; left: 0; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); }
 .experience-note { margin: 24px 0 0; padding: 15px 17px; border-left: 2px solid var(--blue); background: var(--paper-2); color: var(--muted); font-size: .78rem; }
 
-.case-list { margin-top: 38px; border-top: 1px solid var(--ink); }
+.case-list { margin-top: 28px; border-top: 1px solid var(--ink); }
 .case { padding: 34px 0; border-bottom: 1px solid var(--line); }
 .case:last-child { padding-bottom: 0; border-bottom: 0; }
 .case-header { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; }

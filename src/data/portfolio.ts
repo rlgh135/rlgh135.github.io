@@ -29,9 +29,8 @@ export const skills: Skill[] = [
 export const experiences: Experience[] = [
   {
     company: "하이아스",
-    role: "SI 웹 개발 · Full-stack Developer",
+    role: "Full-stack Developer",
     period: "2024.12.01 — Present",
-    description: "RPA 솔루션 기업에서 BI 및 전사 AI 플랫폼의 웹 화면, API, 백엔드를 개발하고 운영합니다.",
     details: [
       "EY컨설팅 등 협력사와 BI·전사 AI 플랫폼 구축 및 운영",
       "웹 화면·API·백엔드 개발, 지표 정합성 검증, 사용자 권한 관리",
@@ -119,7 +118,6 @@ export const experiences: Experience[] = [
     company: "주식회사 앨엔소프트",
     role: "Web Developer",
     period: "2024.10.10 — 2024.11.30",
-    description: "웹 서비스의 QA 결과를 바탕으로 시스템 오류를 분석하고 개선했습니다.",
     projects: [
       {
         title: "넥서스앤컴퍼니 Anyapply·Refercheck 개선",
@@ -136,7 +134,6 @@ export const experiences: Experience[] = [
     role: "실무 멘토",
     period: "2025.09 — 2026.04",
     label: "External Activity",
-    description: "주 1회 기술·실무 교육을 진행하고 총 6개 팀이 교육과정을 수료할 때까지 멘토링을 지원했습니다.",
     details: ["기술·실무 교육", "프로젝트 피드백", "6개 팀 수료 지원"],
     projects: [],
   },

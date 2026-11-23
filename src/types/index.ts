@@ -16,7 +16,6 @@ export interface Experience {
   company: string;
   role: string;
   period: string;
-  description: string;
   details?: string[];
   note?: string;
   label?: string;
