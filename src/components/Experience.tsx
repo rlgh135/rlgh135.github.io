@@ -5,8 +5,6 @@ export function Experience() {
     <section id="experience" className="section experience-section">
       <header className="resume-heading">
         <p className="eyebrow">WORK EXPERIENCE</p>
-        <h2>경력기술서</h2>
-        <p>프로젝트의 구조를 이해하고 데이터가 생성·가공·전달되는 지점을 따라가며 문제를 해결해 왔습니다.</p>
       </header>
 
       <div className="experience-list">

@@ -32,10 +32,10 @@ export const experiences: Experience[] = [
     role: "Full-stack Developer",
     period: "2024.12.01 — Present",
     details: [
-      "EY컨설팅 등 협력사와 BI·전사 AI 플랫폼 구축 및 운영",
-      "웹 화면·API·백엔드 개발, 지표 정합성 검증, 사용자 권한 관리",
+      "BI·전사 AI 플랫폼 구축 및 운영",
+      "화면·API·에이전트 개발",
     ],
-    note: "앨엔소프트의 경영 사정에 따른 모회사 고용승계로 재직 공백 없이 근무를 이어가고 있습니다.",
+    // note: "앨엔소프트의 경영 사정에 따른 모회사 고용승계로 재직 공백 없이 근무를 이어가고 있습니다.",
     projects: [
       {
         title: "삼성전자 DI Platform 구축",
