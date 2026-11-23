@@ -7,6 +7,11 @@ export const profile = {
   value: "좋은 아키텍처를 구성하고, 데이터가 입력되어 처리되고 전달되는 흐름을 끝까지 따라가는 개발자입니다.",
   location: "Seoul, South Korea",
   email: "rlgh135@gmail.com",
+  education: {
+    school: "한동대학교",
+    major: "컴퓨터공학 · 전자공학 복수전공",
+    period: "2014 입학 · 2022 졸업",
+  },
   careerPeriod: "2024.10 — Present",
 };
 

@@ -19,6 +19,14 @@ export function Hero() {
           <dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd>
         </div>
         <div>
+          <dt>Education</dt>
+          <dd className="profile-education">
+            <strong>{profile.education.school}</strong>
+            <span>{profile.education.major}</span>
+            <small>{profile.education.period}</small>
+          </dd>
+        </div>
+        <div>
           <dt>Location</dt>
           <dd>{profile.location}</dd>
         </div>
